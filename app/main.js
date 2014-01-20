@@ -9,9 +9,11 @@
   }
 
   function createEditor() {
-    editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
+    if (!editor) {
+      editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.getSession().setMode("ace/mode/javascript");
+    }
   }
 
   function events() {
@@ -19,7 +21,7 @@
   }
 
   function runCode() {
-    var sanitizedValue = editor.getValue().replace(/\n/g, '').replace(/'/g, '"');
+    var sanitizedValue = editor.getValue().replace(/\n/g, '').replace(/'/g, '\"');
     var code = "var script = document.createElement('script');script.textContent = '" + sanitizedValue + "';document.body.appendChild(script);";
     chrome.tabs.executeScript({
       code: code

@@ -1,13 +1,14 @@
 {
-  "name": "ACE Editor",
+  "name": "ACE Javascript Editor",
+  "description": "",
   "version": "0.0.1",
   "manifest_version": 2,
   "browser_action": {
     "default_icon": {
-      "19": "app/icons/38x38.png",
-      "38": "app/icons/38x38.png"
+      "19": "app/icons/ace-tab.png",
+      "38": "app/icons/ace-tab.png"
     },
-    "default_title": "That's the tool tip",
+    "default_title": "Run code with ACE Editor",
     "default_popup": "app/index.html"
   },
   "content_scripts": [{
